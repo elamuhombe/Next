@@ -1,19 +1,15 @@
-//src/app/components/buttons/AddItemButton.tsx
-import React from "react";
+// AddItemButton.tsx
+import { ButtonProps } from '@/app/types';
+import React from 'react';
 
-interface AddItemButtonProps {
-  label: string;
-  onClick: () => void;
-}
 
-const AddItemButton: React.FC<AddItemButtonProps> = ({ label, onClick }) => {
+const AddItemButton: React.FC<ButtonProps> = ({ onClick, label="AddItem", className }) => {
   return (
     <button
+    
       onClick={onClick}
-      className="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-300"
-    >
-      {label}
-    </button>
+      className={`add-item-btn ${className}`} 
+    >{label}</button>
   );
 };
 
